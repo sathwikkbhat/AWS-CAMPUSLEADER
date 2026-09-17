@@ -203,7 +203,7 @@ p.space_before = Pt(16)
 # Right Column: 3 Pillars with clean, subtle styling
 pillars = [
     ("Connecting Our Campus to AWS", "Direct bridge to AWS learning resources, developer community programs, hackathons, and technical challenges."),
-    ("Free Cloud & AI Learning for Everyone", "Enabling peers across all branches and years to master high-demand cloud and GenAI tools at zero cost."),
+    ("Hands-On Cloud & GenAI Skill Pathways", "Empowering peers across all branches and years with guided learning, next-gen AI tools, and hands-on workshops."),
     ("Mentorship & Certification Preparation", "Guiding you through AWS certification pathways (Cloud Practitioner, Solutions Architect), workshops, and project showcases.")
 ]
 
@@ -283,7 +283,7 @@ p.space_before = Pt(14)
 features = [
     ("Curated Technical Articles", "Access real-world technical articles, tutorials, architecture patterns, and publish your own student projects."),
     ("Global Developer Network", "Directly interact with AWS Community Builders, AWS Heroes, and student leaders worldwide."),
-    ("Hands-On Labs & Toolboxes", "Explore AWS Free Tier, Serverless tools, and guided workshops without complex billing risk.")
+    ("Hands-On Sandboxes & GenAI Tools", "Build live cloud projects, experiment with PartyRock & Amazon Bedrock, and explore serverless architectures with guided sandboxes.")
 ]
 for f_title, f_desc in features:
     p = tf3.add_paragraph()
@@ -337,10 +337,10 @@ bg_card4.line.width = Pt(1)
 add_header(slide4, "Why Should You Join? Student Benefits", "EXCLUSIVE PERKS FOR OUR CAMPUS")
 
 benefits = [
-    ("600+ Free Courses", "Full access to AWS Skill Builder courses, curated learning paths for Cloud Practitioner, AI & Solutions Architecture."),
-    ("Hands-On Tutorials & Labs", "Step-by-step interactive workshops, serverless labs, and real cloud building experiences right from your browser."),
-    ("Weekly Challenges", "Structured problem-solving challenges to test your skills, earn digital credentials, and showcase verified builds on LinkedIn."),
-    ("Global Tech Network", "Direct connection to AWS engineers, student leaders across universities, and unlock mentorship & campus leadership opportunities.")
+    ("Curated Skill Builder Tracks", "Comprehensive on-demand curriculum and guided paths for Cloud Practitioner, Solutions Architect, and Generative AI."),
+    ("Student Rewards & Exam Vouchers", "Verify your student status with SheerID to earn milestone badges, AWS cloud credits, and foundational certification exam vouchers."),
+    ("Generative AI Innovation Playground", "Build working AI apps in minutes using PartyRock (Amazon Bedrock) and accelerate coding with Amazon Q Developer."),
+    ("Verified Builder Profile & Network", "Showcase your real builds on a permanent builder profile (builder.aws.com/@alias) and connect with peers & mentors.")
 ]
 
 for idx, (b_title, b_desc) in enumerate(benefits):
@@ -386,7 +386,7 @@ bottom_banner.line.width = Pt(1)
 
 tf_bb = bottom_banner.text_frame
 p_bb = tf_bb.paragraphs[0]
-p_bb.text = "100% FREE FOR STUDENTS  —  NO CREDIT CARD OR BILLING SETUP REQUIRED"
+p_bb.text = "FRICTIONLESS STUDENT ONBOARDING  —  SIGN UP IN 60 SECONDS WITH YOUR AWS BUILDER ID"
 p_bb.font.name = FONT_HEADING
 p_bb.font.size = Pt(12)
 p_bb.font.bold = True
@@ -533,7 +533,7 @@ p.space_before = Pt(16)
 
 cta_points = [
     ("First-come, first-served handles", "Unique @aliases cannot be changed once chosen. Reserve your personal name or handle today."),
-    ("Instant access to free perks", "Unlock 600+ Skill Builder courses & hands-on workshops right away."),
+    ("Instant access to student perks", "Unlock comprehensive Skill Builder curriculum, GenAI tools & milestone badges right away."),
     ("Connect with Sathwik Bhat (@bhatsathwik)", "Connect with me on campus for project guidance, student study groups, and certifications.")
 ]
 
