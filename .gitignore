@@ -1,0 +1,7 @@
+# Large raw onboarding PDFs
+*.pdf
+
+# Python cache
+__pycache__/
+*.py[cod]
+.venv/
