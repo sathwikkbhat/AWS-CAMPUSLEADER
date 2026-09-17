@@ -130,7 +130,7 @@ p_pres1.font.bold = True
 p_pres1.font.color.rgb = COLOR_WHITE
 
 p_pres2 = tf_pres.add_paragraph()
-p_pres2.text = "AWS Student Builder Campus Leader (SBCL)  •  builder.aws.com  •  #awssbcl"
+p_pres2.text = "AWS Student Builder Campus Leader (SBCL)  •  @bhatsathwik  •  builder.aws.com"
 p_pres2.font.name = FONT_BODY
 p_pres2.font.size = Pt(12)
 p_pres2.font.color.rgb = COLOR_MUTED
@@ -186,7 +186,7 @@ p.font.color.rgb = COLOR_AWS_ORANGE
 p.space_before = Pt(4)
 
 p = tf_lc.add_paragraph()
-p.text = "Officially selected by Amazon Web Services to represent AWS on our campus, bridging the gap between classroom academics and real-world cloud & AI technology."
+p.text = "AWS Student Builder Campus Leader (SBCL) on our campus, helping students explore real-world cloud computing, GenAI tools, and certification guidance."
 p.font.name = FONT_BODY
 p.font.size = Pt(11.5)
 p.font.color.rgb = COLOR_MUTED
@@ -202,7 +202,7 @@ p.space_before = Pt(16)
 
 # Right Column: 3 Pillars with clean, subtle styling
 pillars = [
-    ("Connecting Our Campus to AWS", "Direct bridge to official AWS resources, developer community programs, hackathons, and global technical challenges."),
+    ("Connecting Our Campus to AWS", "Direct bridge to AWS learning resources, developer community programs, hackathons, and technical challenges."),
     ("Free Cloud & AI Learning for Everyone", "Enabling peers across all branches and years to master high-demand cloud and GenAI tools at zero cost."),
     ("Mentorship & Certification Preparation", "Guiding you through AWS certification pathways (Cloud Practitioner, Solutions Architect), workshops, and project showcases.")
 ]
@@ -251,7 +251,7 @@ bg_card3.fill.fore_color.rgb = COLOR_DARK_BG
 bg_card3.line.color.rgb = COLOR_CARD_BORDER
 bg_card3.line.width = Pt(1)
 
-add_header(slide3, "What is AWS Builder Center?", "THE OFFICIAL COMMUNITY PLATFORM")
+add_header(slide3, "What is AWS Builder Center?", "THE BUILDER COMMUNITY PLATFORM")
 
 tb3 = slide3.shapes.add_textbox(Inches(1.0), Inches(1.7), Inches(5.2), Inches(5.0))
 tf3 = tb3.text_frame
@@ -337,7 +337,7 @@ bg_card4.line.width = Pt(1)
 add_header(slide4, "Why Should You Join? Student Benefits", "EXCLUSIVE PERKS FOR OUR CAMPUS")
 
 benefits = [
-    ("600+ Free Courses", "Full access to official AWS Skill Builder courses, curated learning paths for Cloud Practitioner, AI & Solutions Architecture."),
+    ("600+ Free Courses", "Full access to AWS Skill Builder courses, curated learning paths for Cloud Practitioner, AI & Solutions Architecture."),
     ("Hands-On Tutorials & Labs", "Step-by-step interactive workshops, serverless labs, and real cloud building experiences right from your browser."),
     ("Weekly Challenges", "Structured problem-solving challenges to test your skills, earn digital credentials, and showcase verified builds on LinkedIn."),
     ("Global Tech Network", "Direct connection to AWS engineers, student leaders across universities, and unlock mentorship & campus leadership opportunities.")
