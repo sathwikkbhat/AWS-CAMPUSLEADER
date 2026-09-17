@@ -150,6 +150,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Touch / Swipe Navigation for Mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  const deckContainer = document.getElementById('deck-container');
+  if (deckContainer) {
+    deckContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    deckContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    // Trigger if horizontal swipe is > 45px and dominant over vertical scroll
+    if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX < 0) {
+        // Swiped Left -> Next Slide
+        if (currentSlide < totalSlides) updateSlide(currentSlide + 1);
+      } else {
+        // Swiped Right -> Previous Slide
+        if (currentSlide > 1) updateSlide(currentSlide - 1);
+      }
+    }
+  }
+
   // Initial setup
   updateSlide(1);
 });

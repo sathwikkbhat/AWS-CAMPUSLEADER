@@ -1256,6 +1256,316 @@ body {
   color: #E2E8F0;
 }
 
+/* ================= RESPONSIVE / MOBILE OPTIMIZATIONS ================= */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.7rem;
+  }
+  .slide-title {
+    font-size: 1.7rem;
+  }
+  .glass-panel {
+    padding: 1.8rem 2.2rem;
+  }
+  .two-col-grid {
+    gap: 1.3rem;
+  }
+  .split-hero-grid {
+    gap: 1.4rem;
+  }
+  .steps-4-grid {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Top Nav Compact */
+  .top-nav {
+    height: 50px;
+    padding: 0 0.9rem;
+  }
+  .nav-left {
+    gap: 0.6rem;
+  }
+  .nav-logo {
+    height: 20px;
+  }
+  .nav-title {
+    font-size: 0.8rem;
+  }
+  .nav-title span {
+    display: none;
+  }
+  .nav-btn span {
+    display: none;
+  }
+  .nav-btn {
+    padding: 0.4rem;
+  }
+  .progress-bar-container {
+    width: 80px;
+  }
+
+  /* Presentation Stage Full Viewport Adaptation */
+  .presentation-stage {
+    padding: 0.4rem 0.5rem;
+  }
+  .deck-container {
+    height: calc(100vh - 108px);
+    max-height: none;
+    aspect-ratio: auto;
+    border-radius: 12px;
+  }
+  .glass-panel {
+    padding: 1.2rem 1.1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+  }
+
+  .slide-header {
+    margin-bottom: 0.9rem;
+  }
+  .category-tag {
+    font-size: 0.65rem;
+  }
+  .slide-title {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+  .slide-subheading {
+    font-size: 0.78rem;
+  }
+
+  /* Slide 1: Cover */
+  .brand-wordmark {
+    height: 32px;
+    margin-bottom: 0.8rem;
+  }
+  .hero-title {
+    font-size: 2.05rem;
+    margin-bottom: 0.7rem;
+  }
+  .hero-subtitle {
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+  }
+  .hero-highlights {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .hero-chip {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+  }
+  .chip-sep {
+    display: none;
+  }
+  .presenter-footer-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.75rem 0.9rem;
+  }
+  .presenter-tag {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Slide 2: Meet Sathwik */
+  .two-col-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .profile-card {
+    padding: 1.1rem 1rem;
+  }
+  .avatar-large {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 0.65rem;
+  }
+  .profile-name {
+    font-size: 1.25rem;
+  }
+  .profile-desc {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .pillars-stack {
+    gap: 0.65rem;
+  }
+  .pillar-card {
+    padding: 0.8rem 1rem;
+    gap: 0.75rem;
+  }
+  .pillar-number {
+    font-size: 1rem;
+  }
+  .pillar-body h4 {
+    font-size: 0.88rem;
+  }
+  .pillar-body p {
+    font-size: 0.76rem;
+  }
+
+  /* Slide 3: What is Builder Center */
+  .split-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .platform-manifesto h3 {
+    font-size: 1.1rem;
+  }
+  .platform-manifesto p {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .feature-content {
+    padding: 0.6rem 0.75rem;
+  }
+  .feature-content strong {
+    font-size: 0.82rem;
+  }
+  .feature-content span {
+    font-size: 0.74rem;
+  }
+  .platform-preview-card {
+    margin-top: 0.6rem;
+  }
+
+  /* Slide 4: Student Benefits */
+  .benefits-editorial-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0.65rem;
+  }
+  .benefit-card {
+    padding: 0.85rem 1rem;
+  }
+  .benefit-number {
+    font-size: 1.7rem;
+  }
+  .benefit-card h3 {
+    font-size: 0.95rem;
+  }
+  .benefit-card p {
+    font-size: 0.76rem;
+  }
+  .hero-benefit-tags {
+    gap: 0.35rem;
+    margin-top: 0.65rem;
+  }
+  .hero-benefit-tags span {
+    font-size: 0.68rem;
+    padding: 0.18rem 0.45rem;
+  }
+  .free-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.76rem;
+  }
+
+  /* Slide 5: 4-Step Signup Walkthrough */
+  .steps-4-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+  .step-card {
+    padding: 0.55rem;
+  }
+  .step-header h4 {
+    font-size: 0.78rem;
+  }
+  .step-header p {
+    font-size: 0.66rem;
+  }
+  .phone-frame {
+    max-width: 145px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+  .phone-notch {
+    width: 24px;
+    height: 3px;
+    margin: 3px auto 2px;
+  }
+
+  /* Slide 6: Call to Action */
+  .cta-two-panel {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0;
+  }
+  .cta-qr-box {
+    padding: 1rem;
+  }
+  .qr-frame {
+    width: 150px;
+    height: 150px;
+  }
+  .link-callout-card {
+    padding: 0.75rem 1rem;
+  }
+  .link-url {
+    font-size: 1.05rem;
+    word-break: break-all;
+  }
+  .checklist-item {
+    gap: 0.65rem;
+  }
+  .check-badge {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  .checklist-item strong {
+    font-size: 0.82rem;
+  }
+  .checklist-item p {
+    font-size: 0.74rem;
+  }
+  .cta-footer-tag {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .cta-footer-tag .sep {
+    display: none;
+  }
+
+  /* Bottom Controls Compact */
+  .bottom-controls {
+    height: 52px;
+    padding: 0 0.8rem;
+  }
+  .controls-right {
+    display: none;
+  }
+  .ctrl-btn {
+    padding: 0.38rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  .dot-btn {
+    width: 7px;
+    height: 7px;
+  }
+  .dot-btn.active {
+    width: 18px;
+  }
+
+  /* Mobile Notes Drawer */
+  .notes-drawer {
+    width: 100%;
+    right: -100%;
+    height: calc(100vh - 102px);
+    top: 50px;
+  }
+}
+
 /* ================= PRINT / PDF EXPORT STYLES ================= */
 @media print {
   body {
