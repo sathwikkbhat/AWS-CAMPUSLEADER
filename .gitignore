@@ -1,8 +1,11 @@
 # Large raw onboarding PDFs
 *.pdf
+!AWS_Builder_Center_Class_Announcement.pdf
 
 # Python cache & export temp files
 __pycache__/
 *.py[cod]
 .venv/
 slide_exports/
+scratch/
+*.png

@@ -105,7 +105,9 @@ def generate_perfect_deck():
             """)
             page.wait_for_timeout(500)
             img_path = os.path.join(output_dir, f"slide_{i}.png")
-            page.screenshot(path=img_path)
+            img_bytes = page.screenshot()
+            with open(img_path, "wb") as f:
+                f.write(img_bytes)
             slide_images.append(img_path)
             print(f"Rendered Slide {i} -> {img_path}")
             
