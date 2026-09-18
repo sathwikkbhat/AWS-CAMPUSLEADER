@@ -32,6 +32,19 @@
           "value": "attachment; filename=\"AWS_Builder_Center_Class_Announcement.pptx\""
         }
       ]
+    },
+    {
+      "source": "/AWS_Builder_Center_Class_Announcement.pdf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"AWS_Builder_Center_Class_Announcement.pdf\""
+        }
+      ]
     }
   ]
 }
