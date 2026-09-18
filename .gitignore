@@ -1,7 +1,8 @@
 # Large raw onboarding PDFs
 *.pdf
 
-# Python cache
+# Python cache & export temp files
 __pycache__/
 *.py[cod]
 .venv/
+slide_exports/
