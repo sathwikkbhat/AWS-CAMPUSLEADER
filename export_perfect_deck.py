@@ -1,5 +1,6 @@
 import os
 import sys
+import io
 from playwright.sync_api import sync_playwright
 from pptx import Presentation
 from pptx.util import Inches
@@ -60,6 +61,147 @@ def generate_perfect_deck():
                 transition: none !important;
                 animation: none !important;
             }
+
+            /* === Slide 2 Export Layout Fix (Fills height, zero dead space) === */
+            [data-slide="2"] .two-col-grid {
+                gap: 2.2rem !important;
+                height: calc(100% - 95px) !important;
+            }
+            [data-slide="2"] .profile-card {
+                padding: 2.4rem 2rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                height: 100% !important;
+                background: rgba(18, 26, 38, 0.75) !important;
+                border-color: rgba(255, 255, 255, 0.12) !important;
+            }
+            [data-slide="2"] .profile-top-badge {
+                font-size: 0.75rem !important;
+                padding: 0.25rem 0.75rem !important;
+                margin-bottom: 0.8rem !important;
+            }
+            [data-slide="2"] .avatar-large {
+                width: 125px !important;
+                height: 125px !important;
+                margin-bottom: 1rem !important;
+            }
+            [data-slide="2"] .profile-name {
+                font-size: 2rem !important;
+                margin-bottom: 0.3rem !important;
+            }
+            [data-slide="2"] .profile-designation {
+                font-size: 0.95rem !important;
+                margin-bottom: 1rem !important;
+            }
+            [data-slide="2"] .profile-desc {
+                font-size: 0.98rem !important;
+                line-height: 1.65 !important;
+                margin-bottom: 1.5rem !important;
+                max-width: 440px !important;
+            }
+            [data-slide="2"] .profile-handle-box {
+                padding: 1rem 1.4rem !important;
+                border-radius: 10px !important;
+            }
+            [data-slide="2"] .handle-label {
+                font-size: 0.75rem !important;
+                margin-bottom: 0.35rem !important;
+            }
+            [data-slide="2"] .handle-val {
+                font-size: 1.05rem !important;
+            }
+            [data-slide="2"] .pillar-cards {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                height: 100% !important;
+                gap: 1.2rem !important;
+            }
+            [data-slide="2"] .pillar-card {
+                flex: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                padding: 1.6rem 2rem !important;
+                margin-bottom: 0 !important;
+                background: rgba(18, 26, 38, 0.75) !important;
+                border-color: rgba(255, 255, 255, 0.12) !important;
+            }
+            [data-slide="2"] .pillar-card h4 {
+                font-size: 1.3rem !important;
+                margin-bottom: 0.45rem !important;
+            }
+            [data-slide="2"] .pillar-card p {
+                font-size: 0.98rem !important;
+                line-height: 1.6 !important;
+            }
+
+            /* === Slide 5 Export Layout Fix (Aligned phone frames, zero cutoff) === */
+            [data-slide="5"] .steps-4-grid {
+                gap: 1.3rem !important;
+                height: calc(100% - 90px) !important;
+                align-items: stretch !important;
+            }
+            [data-slide="5"] .step-card {
+                padding: 1.1rem 0.9rem 1.2rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                height: 100% !important;
+                background: rgba(18, 26, 38, 0.75) !important;
+                border-color: rgba(255, 255, 255, 0.12) !important;
+            }
+            [data-slide="5"] .step-header {
+                margin-bottom: 0.9rem !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+            [data-slide="5"] .step-num-pill {
+                font-size: 0.72rem !important;
+                padding: 0.22rem 0.65rem !important;
+                margin-bottom: 0.35rem !important;
+            }
+            [data-slide="5"] .step-header h4 {
+                font-size: 1.05rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            [data-slide="5"] .step-header p {
+                font-size: 0.8rem !important;
+            }
+            [data-slide="5"] .phone-frame {
+                width: 250px !important;
+                height: 485px !important;
+                max-width: 250px !important;
+                border-radius: 22px !important;
+                border: 2px solid rgba(255, 255, 255, 0.18) !important;
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                flex: none !important;
+                margin: auto auto 0 !important;
+                background: #080C12 !important;
+            }
+            [data-slide="5"] .phone-notch {
+                width: 55px !important;
+                height: 6px !important;
+                margin: 7px auto 5px !important;
+                background: #182232 !important;
+            }
+            [data-slide="5"] .phone-screen {
+                flex: 1 !important;
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden !important;
+            }
+            [data-slide="5"] .phone-screen img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: top center !important;
+                display: block !important;
+            }
         """)
         
         # Wait a moment for web fonts (Plus Jakarta Sans, Space Grotesk, Inter) to render
@@ -104,12 +246,9 @@ def generate_perfect_deck():
                 }}
             """)
             page.wait_for_timeout(500)
-            img_path = os.path.join(output_dir, f"slide_{i}.png")
             img_bytes = page.screenshot()
-            with open(img_path, "wb") as f:
-                f.write(img_bytes)
-            slide_images.append(img_path)
-            print(f"Rendered Slide {i} -> {img_path}")
+            slide_images.append(img_bytes)
+            print(f"Rendered Slide {i} in memory")
             
         browser.close()
         
@@ -120,10 +259,10 @@ def generate_perfect_deck():
     prs.slide_height = Inches(7.5)
     blank_layout = prs.slide_layouts[6]
     
-    for idx, img_path in enumerate(slide_images):
+    for idx, img_bytes in enumerate(slide_images):
         slide = prs.slides.add_slide(blank_layout)
         # Add full bleed 16:9 picture (0 margins, full resolution)
-        slide.shapes.add_picture(img_path, Inches(0), Inches(0), width=Inches(13.333), height=Inches(7.5))
+        slide.shapes.add_picture(io.BytesIO(img_bytes), Inches(0), Inches(0), width=Inches(13.333), height=Inches(7.5))
         
         # Add speaker notes to the slide!
         if idx < len(speaker_notes):
@@ -137,7 +276,7 @@ def generate_perfect_deck():
     
     # Also create a high-definition PDF
     pdf_filename = "AWS_Builder_Center_Class_Announcement.pdf"
-    pil_images = [Image.open(img).convert("RGB") for img in slide_images]
+    pil_images = [Image.open(io.BytesIO(b)).convert("RGB") for b in slide_images]
     if pil_images:
         pil_images[0].save(
             pdf_filename,
